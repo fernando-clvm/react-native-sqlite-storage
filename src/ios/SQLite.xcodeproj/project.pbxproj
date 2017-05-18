@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		766C6E677AE0CB1A96A14D27 /* libPods-SQLite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 283F4291EF39A993CDA6F459 /* libPods-SQLite.a */; };
+		8D599B8E1C999AAF00170CA4 /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = 8D599B8C1C999AAF00170CA4 /* sqlite3.c */; };
+		8D599B8F1C999AAF00170CA4 /* sqlite3.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D599B8D1C999AAF00170CA4 /* sqlite3.h */; };
 		C7DCD6E41BE0295900F3300E /* SQLite.h in Headers */ = {isa = PBXBuildFile; fileRef = C7DCD6E21BE0295900F3300E /* SQLite.h */; };
 		C7DCD6E51BE0295A00F3300E /* SQLite.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DCD6E31BE0295900F3300E /* SQLite.m */; };
 		C7DCD7141BE2D5DE00F3300E /* SQLiteResult.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DCD7131BE2D5DE00F3300E /* SQLiteResult.m */; };
@@ -26,9 +27,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		283F4291EF39A993CDA6F459 /* libPods-SQLite.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SQLite.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6058EAD27EAB4F6C2126BD01 /* Pods-SQLite.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SQLite.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SQLite/Pods-SQLite.debug.xcconfig"; sourceTree = "<group>"; };
-		BE3476CEE86CC54067E935D6 /* Pods-SQLite.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SQLite.release.xcconfig"; path = "Pods/Target Support Files/Pods-SQLite/Pods-SQLite.release.xcconfig"; sourceTree = "<group>"; };
+		8D599B8C1C999AAF00170CA4 /* sqlite3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = sqlite3.c; path = ../common/sqlite3.c; sourceTree = "<group>"; };
+		8D599B8D1C999AAF00170CA4 /* sqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sqlite3.h; path = ../common/sqlite3.h; sourceTree = "<group>"; };
 		C7DCD6E21BE0295900F3300E /* SQLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLite.h; sourceTree = "<group>"; };
 		C7DCD6E31BE0295900F3300E /* SQLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLite.m; sourceTree = "<group>"; };
 		C7DCD7131BE2D5DE00F3300E /* SQLiteResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLiteResult.m; sourceTree = "<group>"; };
@@ -41,33 +41,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				766C6E677AE0CB1A96A14D27 /* libPods-SQLite.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		51206A102BE4F33CD1BC73FB /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				6058EAD27EAB4F6C2126BD01 /* Pods-SQLite.debug.xcconfig */,
-				BE3476CEE86CC54067E935D6 /* Pods-SQLite.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		B2A22F8FF3567BC4627F1A3C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				283F4291EF39A993CDA6F459 /* libPods-SQLite.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		C7DCD6E11BE0293D00F3300E /* SQLite */ = {
 			isa = PBXGroup;
 			children = (
+				8D599B8C1C999AAF00170CA4 /* sqlite3.c */,
+				8D599B8D1C999AAF00170CA4 /* sqlite3.h */,
 				C7DCD6E21BE0295900F3300E /* SQLite.h */,
 				C7DCD6E31BE0295900F3300E /* SQLite.m */,
 				C7DCD7151BE2D61E00F3300E /* SQLiteResult.h */,
@@ -81,8 +65,6 @@
 			children = (
 				C7DCD6E11BE0293D00F3300E /* SQLite */,
 				E23D7B481ACEFE2A00C59171 /* Products */,
-				51206A102BE4F33CD1BC73FB /* Pods */,
-				B2A22F8FF3567BC4627F1A3C /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -103,6 +85,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D599B8F1C999AAF00170CA4 /* sqlite3.h in Headers */,
 				C7DCD6E41BE0295900F3300E /* SQLite.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -114,12 +97,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E23D7B5B1ACEFE2A00C59171 /* Build configuration list for PBXNativeTarget "SQLite" */;
 			buildPhases = (
-				1BB1C5776E8EF3E0E8C50ABE /* [CP] Check Pods Manifest.lock */,
 				E23D7B431ACEFE2A00C59171 /* Sources */,
 				E23D7B441ACEFE2A00C59171 /* Frameworks */,
 				E23D7B451ACEFE2A00C59171 /* CopyFiles */,
 				E25C749F1ACEFF2C004F0793 /* Headers */,
-				18E35315B684B4516483AD04 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -136,7 +117,7 @@
 		E23D7B3F1ACEFE2A00C59171 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Andrzej Porebski";
 				TargetAttributes = {
 					E23D7B461ACEFE2A00C59171 = {
@@ -161,45 +142,13 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		18E35315B684B4516483AD04 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SQLite/Pods-SQLite-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1BB1C5776E8EF3E0E8C50ABE /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		E23D7B431ACEFE2A00C59171 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				C7DCD7141BE2D5DE00F3300E /* SQLiteResult.m in Sources */,
+				8D599B8E1C999AAF00170CA4 /* sqlite3.c in Sources */,
 				C7DCD6E51BE0295A00F3300E /* SQLite.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -220,18 +169,14 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -264,17 +209,14 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -290,7 +232,6 @@
 		};
 		E23D7B5C1ACEFE2A00C59171 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6058EAD27EAB4F6C2126BD01 /* Pods-SQLite.debug.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				HEADER_SEARCH_PATHS = (
@@ -298,17 +239,15 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../react-native/React/**",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = SQLite;
 				SKIP_INSTALL = YES;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../../react-native/React/**";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../../react-native/React/** $(SRCROOT)/../../test/TestRunner/node_modules/react-native/React/**";
 			};
 			name = Debug;
 		};
 		E23D7B5D1ACEFE2A00C59171 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BE3476CEE86CC54067E935D6 /* Pods-SQLite.release.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				HEADER_SEARCH_PATHS = (
@@ -316,11 +255,10 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../react-native/React/**",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = SQLite;
 				SKIP_INSTALL = YES;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../../react-native/React/**";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../../react-native/React/** $(SRCROOT)/../../test/TestRunner/node_modules/react-native/React/**";
 			};
 			name = Release;
 		};
