@@ -18,10 +18,10 @@
 #import "SQLite.h"
 #import "SQLiteResult.h"
 
-#import "RCTLog.h"
-#import "RCTUtils.h"
-#import "RCTBridge.h"
-#import "RCTEventDispatcher.h"
+#import <React/RCTLog.h>
+#import <React/RCTUtils.h>
+#import <React/RCTBridge.h>
+#import <React/RCTEventDispatcher.h>
 
 /*
  * Copyright (C) 2015-Present Andrzej Porebski
@@ -281,11 +281,11 @@ RCT_EXPORT_METHOD(close: (NSDictionary *) options success:(RCTResponseSenderBloc
       } else {
         sqlite3 *db = [((NSValue *) dbInfo[@"dbPointer"]) pointerValue];
         NSString *dbPath = dbInfo[@"dbPath"];
-            
+        
         if ([[NSFileManager defaultManager] fileExistsAtPath:dbPath]) {
           NSLog(@"close: database still exists at path %@, proceeding to close it.",dbPath);
         }
-            
+        
         if (db == NULL) {
           // Should not happen:
           NSLog(@"close: db name was not open: %@", dbFileName);
@@ -358,7 +358,7 @@ RCT_EXPORT_METHOD(delete: (NSDictionary *) options success:(RCTResponseSenderBlo
   SQLiteResult* pluginResult = nil;
   NSString *dbfilename = options[@"path"];
   NSString *dblocation = options[@"dblocation"];
-    
+  
   @synchronized (self) {
     if (dbfilename == NULL) {
       // Should not happen:
@@ -500,7 +500,7 @@ RCT_EXPORT_METHOD(executeSql: (NSDictionary *) options success:(RCTResponseSende
   while (keepGoing) {
     result = sqlite3_step (statement);
     switch (result) {
-        
+      
       case SQLITE_ROW:
         i = 0;
         entry = [NSMutableDictionary dictionaryWithCapacity:0];
