@@ -1,3 +1,0 @@
-target 'SQLite' do
-  pod 'SQLCipher', '3.4.0'
-end
